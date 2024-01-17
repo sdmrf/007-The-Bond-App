@@ -10,17 +10,17 @@ import GetStarted from '../screens/getStarted/GetStarted';
 
 const StackArea = () => {
   return (
-    <Stack.Navigator initialRouteName='GetStarted'>
+    <Stack.Navigator initialRouteName="GetStarted">
       <Stack.Screen
-        name="Home"
-        component={HomeScreen}
+        name="GetStarted"
+        component={GetStarted}
         options={{
           headerShown: false,
         }}
       />
       <Stack.Screen
-        name="GetStarted"
-        component={GetStarted}
+        name="Home"
+        component={HomeScreen}
         options={{
           headerShown: false,
         }}
