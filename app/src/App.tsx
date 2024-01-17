@@ -1,19 +1,15 @@
 // Author: Sdmrf
-import { Text, View } from 'react-native'
-import React, { Component } from 'react'
+import React, {Component} from 'react';
 
-// Screen Imports
-import Homescreen from './screens/Homescreen'
+// Screens Import
+import Screens from './navigation/Screens';
 
 export class App extends Component {
   render() {
     return (
-      <View>
-        <Text>App</Text>
-        <Homescreen />
-      </View>
-    )
+      <Screens />
+    );
   }
 }
 
-export default App
+export default App;
