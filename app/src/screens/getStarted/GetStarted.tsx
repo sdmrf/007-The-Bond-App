@@ -1,19 +1,30 @@
 // Imports
-import { View, Text, StyleSheet } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { View, Text, Image, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
 
 // Constants
-import {colors} from '../../constants/'
+import { colors, images } from '../../constants/';
+
+// Dimensions
+const { width, height } = Dimensions.get('screen');
 
 const GetStarted = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>GetStarted</Text>
+      <View style={styles.top}>
+        <Image source={images.mainImg} style={styles.image} />
+        <Text style={styles.text}>Welcome to the 007-the-bond!</Text>
+      </View>
+      <View style={styles.bottom}>
+        <TouchableOpacity onPress={() => console.log("Got")} style={styles.button}>
+          <Text style={styles.buttonText}>Get Started</Text>
+        </TouchableOpacity>
+      </View>
     </View>
-  )
-}
+  );
+};
 
-export default GetStarted
+export default GetStarted;
 
 const styles = StyleSheet.create({
   container: {
@@ -21,9 +32,50 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: colors.primary,
+    height,
+    width,
   },
-  text : {
+  top: {
+    flex: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 20,
+    height: height / 2,
+    width,
+  },
+  bottom: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: height / 2,
+    width,
+  },
+  text: {
     color: colors.white,
+    fontSize: 24,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    width: 300,
+    textShadowColor: colors.black,
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 1,
+    
+  },
+  image: {
+    width: 225,
+    height: 225,
+  },
+  button: {
+    width: 200,
+    height: 50,
+    backgroundColor: colors.white,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: colors.primary,
     fontSize: 16,
-  }
+    fontWeight: 'bold',
+  },
 });
