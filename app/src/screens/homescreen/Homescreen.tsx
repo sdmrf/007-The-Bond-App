@@ -37,7 +37,7 @@ const features = [
   },
 ];
 const handleFeaturePress = (navigation: any, screen: string) => {
-  navigation.navigate(screen);
+  navigation.navigate('Search');
 };
 
 const Homescreen = ({navigation}: any) => {
