@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     margin: 10,
     padding: 10,
-    elevation: 10,
+    elevation: 50,
     gap: 10,
   },
   content: {

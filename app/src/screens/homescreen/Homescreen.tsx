@@ -1,14 +1,46 @@
 // Imports
 import React from 'react';
-import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
+import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
 
 // Components
 import Feature from '../../components/Feature';
 
 // Constants
-import { colors, icons, images } from '../../constants';
+import {colors, icons, images} from '../../constants';
 
-const Homescreen = () => {
+// Features
+const features = [
+  {
+    icon: icons.instagram,
+    label: 'Instagram Search',
+    navigation: 'Instagram',
+  },
+  {
+    icon: icons.webSearch,
+    label: 'Web Search',
+    navigation: 'WebSearch',
+  },
+  {
+    icon: icons.telephone,
+    label: 'Phone Search',
+    navigation: 'PhoneSearch',
+  },
+  {
+    icon: icons.ipAddress,
+    label: 'IP Address Search',
+    navigation: 'IPAddressSearch',
+  },
+  {
+    icon: icons.platforms,
+    label: 'Search on Platforms',
+    navigation: 'Platforms',
+  },
+];
+const handleFeaturePress = (navigation: any, screen: string) => {
+  navigation.navigate(screen);
+};
+
+const Homescreen = ({navigation}: any) => {
   return (
     <View style={styles.main}>
       <View style={styles.header}>
@@ -16,13 +48,12 @@ const Homescreen = () => {
         <Image source={icons.menu} style={styles.menu} />
       </View>
       <View style={styles.container} />
-      <Wrapper />
+      <Wrapper navigation={navigation} />
     </View>
   );
 };
 
-
-const Wrapper = () => {
+const Wrapper = ({navigation}: any) => {
   return (
     <View style={styles.wrapper}>
       <Text style={styles.featurestxt}>Features</Text>
@@ -30,21 +61,21 @@ const Wrapper = () => {
         <Image source={images.mainImg} style={styles.mainImg} />
       </View>
       <View style={styles.featurescontainer}>
-        <Feature icon={icons.instagram} label="Instagram Search" />
-        {/* <Feature icon={icons.bike} label="Fitness" />
-        <Feature icon={icons.dumbbell} label="Gym" />
-        <Feature icon={icons.food} label="Food" />
-        <Feature icon={icons.heart} label="Health" />
-        <Feature icon={icons.bike} label="Fitness" />
-        <Feature icon={icons.dumbbell} label="Gym" />
-        <Feature icon={icons.food} label="Food" /> */}
+        {features.map((feature, index) => (
+          <Feature
+            key={index}
+            icon={feature.icon}
+            label={feature.label}
+            onPress={() => handleFeaturePress(navigation, feature.navigation)}
+          />
+        ))}
       </View>
     </View>
   );
 };
 
 // Dimensions
-const { width, height } = Dimensions.get('screen');
+const {width, height} = Dimensions.get('screen');
 
 const styles = StyleSheet.create({
   main: {
