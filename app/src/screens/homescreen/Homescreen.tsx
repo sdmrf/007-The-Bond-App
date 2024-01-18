@@ -12,27 +12,23 @@ const Homescreen = () => {
         <Text style={styles.title}>007 - The Bond</Text>
         <Image source={icons.menu} style={styles.menu} />
       </View>
-      <Container />
+      <View style={styles.container} />
       <Wrapper />
     </View>
   );
 };
 
-const Container = () => {
-  return (
-    <View style={styles.container}>
-      <Text>Container</Text>
-    </View>
-  );
-};
 
 const Wrapper = () => {
   return (
     <View style={styles.wrapper}>
+      <Text style={styles.featurestxt}>Features</Text>
       <View style={styles.circle}>
         <Image source={images.mainImg} style={styles.mainImg} />
       </View>
-      <Text>Wrapper</Text>
+      <View style={styles.featurescontainer}>
+        <Text>Features</Text>
+      </View>
     </View>
   );
 };
@@ -59,7 +55,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: colors.secondary,
-    height: height * 0.75,
+    height: height * 0.7,
     width,
     elevation: 50,
   },
@@ -88,9 +84,10 @@ const styles = StyleSheet.create({
     tintColor: colors.white,
   },
   title: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: 'bold',
     color: colors.white,
+    zIndex: 1,
   },
   mainImg: {
     width: width * (1 / 2),
@@ -99,6 +96,25 @@ const styles = StyleSheet.create({
     backgroundColor: colors.secondary,
     borderWidth: 5,
     borderColor: colors.white,
+  },
+  featurestxt: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: colors.whiteSmoke,
+    position: 'absolute',
+    top: width * (1 / 3) - 10,
+    left: 20,
+    zIndex: 1,
+  },
+  featurescontainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: colors.whiteSmoke,
+    height: height * 0.5,
+    width: width * 0.9,
+    borderRadius: 30,
+    elevation: 50,
+    marginTop: width * (1 / 2) - 50,
   },
 });
 

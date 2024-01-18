@@ -5,6 +5,7 @@ export const colors = {
 
     // Neutrals
     white: '#FFFFFF',
+    whiteSmoke: '#F5F5F5',
     black: '#000000',
     gray: '#BFBFBF',
 
