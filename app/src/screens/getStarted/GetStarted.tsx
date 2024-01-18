@@ -2,13 +2,16 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
 
+
 // Constants
 import { colors, images } from '../../constants/';
+
 
 // Dimensions
 const { width, height } = Dimensions.get('screen');
 
-const GetStarted = () => {
+
+const GetStarted = ({navigation} : any) => {
   return (
     <View style={styles.container}>
       <View style={styles.top}>
@@ -16,7 +19,7 @@ const GetStarted = () => {
         <Text style={styles.text}>Welcome to the 007-the-bond!</Text>
       </View>
       <View style={styles.bottom}>
-        <TouchableOpacity onPress={() => console.log("Got")} style={styles.button}>
+        <TouchableOpacity onPress={() => navigation.navigate('TermsAndConditions')} style={styles.button}>
           <Text style={styles.buttonText}>Get Started</Text>
         </TouchableOpacity>
       </View>
