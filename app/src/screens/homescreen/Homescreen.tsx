@@ -2,6 +2,9 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
 
+// Components
+import Feature from '../../components/Feature';
+
 // Constants
 import { colors, icons, images } from '../../constants';
 
@@ -27,7 +30,14 @@ const Wrapper = () => {
         <Image source={images.mainImg} style={styles.mainImg} />
       </View>
       <View style={styles.featurescontainer}>
-        <Text>Features</Text>
+        <Feature icon={icons.instagram} label="Instagram Search" />
+        {/* <Feature icon={icons.bike} label="Fitness" />
+        <Feature icon={icons.dumbbell} label="Gym" />
+        <Feature icon={icons.food} label="Food" />
+        <Feature icon={icons.heart} label="Health" />
+        <Feature icon={icons.bike} label="Fitness" />
+        <Feature icon={icons.dumbbell} label="Gym" />
+        <Feature icon={icons.food} label="Food" /> */}
       </View>
     </View>
   );
@@ -115,6 +125,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     elevation: 50,
     marginTop: width * (1 / 2) - 50,
+    padding: 10,
   },
 });
 
