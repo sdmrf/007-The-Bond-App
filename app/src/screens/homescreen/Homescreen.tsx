@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.secondary,
     height: height * 0.7,
     width,
+    elevation: 50,
   },
   circle: {
     width: width * (2 / 3),
@@ -63,6 +64,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary,
     position: 'absolute',
     top: -width * (1 / 3),
+    
   },
 });
 
