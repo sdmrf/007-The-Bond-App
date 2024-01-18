@@ -28,6 +28,10 @@ const TermsAndConditions = ({navigation}: any) => {
       Alert.alert('Terms and conditions accepted');
       AsyncStorage.setItem('termsAccepted', 'true');
       navigation.navigate('Home');
+      navigation.reset({
+        index: 0,
+        routes: [{name: 'Home'}],
+      });
     }
   };
 
