@@ -10,7 +10,7 @@ const Stack = createNativeStackNavigator();
 import HomeScreen from '../screens/homescreen/Homescreen';
 import GetStarted from '../screens/getStarted/GetStarted';
 import TermsAndConditions from '../screens/termsAndConditions/TermsAndConditions';
-import Search from '../screens/Search/Search';
+import Search from '../screens/search/Search';
 
 const StackArea = () => {
   const [accepted, setAccepted] = useState<boolean | null>(null);
