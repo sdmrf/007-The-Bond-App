@@ -3,13 +3,13 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
 
 // Constants
-import { colors, icons } from '../../constants';
+import { colors, icons, images } from '../../constants';
 
 const Homescreen = () => {
   return (
     <View style={styles.main}>
       <View style={styles.header}>
-        <Text  style={styles.title}>007 - The Bond</Text>
+        <Text style={styles.title}>007 - The Bond</Text>
         <Image source={icons.menu} style={styles.menu} />
       </View>
       <Container />
@@ -29,7 +29,9 @@ const Container = () => {
 const Wrapper = () => {
   return (
     <View style={styles.wrapper}>
-      <View style={styles.circle} />
+      <View style={styles.circle}>
+        <Image source={images.mainImg} style={styles.mainImg} />
+      </View>
       <Text>Wrapper</Text>
     </View>
   );
@@ -57,7 +59,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: colors.secondary,
-    height: height * 0.7,
+    height: height * 0.75,
     width,
     elevation: 50,
   },
@@ -71,13 +73,14 @@ const styles = StyleSheet.create({
     width,
   },
   circle: {
+    alignItems: 'center',
+    justifyContent: 'center',
     width: width * (2 / 3),
     height: width * (2 / 3),
     borderRadius: width * (1 / 3),
     backgroundColor: colors.primary,
     position: 'absolute',
     top: -width * (1 / 3),
-    
   },
   menu: {
     width: 30,
@@ -88,6 +91,14 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: colors.white,
+  },
+  mainImg: {
+    width: width * (1 / 2),
+    height: width * (1 / 2),
+    borderRadius: width * (1 / 4),
+    backgroundColor: colors.secondary,
+    borderWidth: 5,
+    borderColor: colors.white,
   },
 });
 
