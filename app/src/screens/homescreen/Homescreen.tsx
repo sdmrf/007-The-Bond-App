@@ -1,13 +1,17 @@
 // Imports
 import React from 'react';
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
 
 // Constants
-import { colors } from '../../constants';
+import { colors, icons } from '../../constants';
 
 const Homescreen = () => {
   return (
     <View style={styles.main}>
+      <View style={styles.header}>
+        <Text  style={styles.title}>007 - The Bond</Text>
+        <Image source={icons.menu} style={styles.menu} />
+      </View>
       <Container />
       <Wrapper />
     </View>
@@ -57,6 +61,15 @@ const styles = StyleSheet.create({
     width,
     elevation: 50,
   },
+  header: {
+    flex: 1,
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
+    height,
+    width,
+  },
   circle: {
     width: width * (2 / 3),
     height: width * (2 / 3),
@@ -65,6 +78,16 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: -width * (1 / 3),
     
+  },
+  menu: {
+    width: 30,
+    height: 30,
+    tintColor: colors.white,
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: colors.white,
   },
 });
 
