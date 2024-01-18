@@ -7,10 +7,11 @@ const Stack = createNativeStackNavigator();
 // Screen Imports
 import HomeScreen from '../screens/homescreen/Homescreen';
 import GetStarted from '../screens/getStarted/GetStarted';
+import TermsAndConditions from '../screens/termsAndConditions/TermsAndConditions';
 
 const StackArea = () => {
   return (
-    <Stack.Navigator initialRouteName="GetStarted">
+    <Stack.Navigator initialRouteName="TermsAndConditions">
       <Stack.Screen
         name="GetStarted"
         component={GetStarted}
@@ -21,6 +22,13 @@ const StackArea = () => {
       <Stack.Screen
         name="Home"
         component={HomeScreen}
+        options={{
+          headerShown: false,
+        }} 
+      />
+      <Stack.Screen
+        name="TermsAndConditions"
+        component={TermsAndConditions}
         options={{
           headerShown: false,
         }}
