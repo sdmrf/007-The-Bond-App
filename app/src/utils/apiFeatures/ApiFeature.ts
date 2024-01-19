@@ -3,4 +3,4 @@ import IpAddress from "./IpAddress";
 
 
 
-export { IpAddress };
+export default { IpAddress };

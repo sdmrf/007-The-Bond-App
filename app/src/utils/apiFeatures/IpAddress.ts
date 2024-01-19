@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const IpAddress = async ({ip}: any) => {
-  const url = `https://ipapi.co/${ip}/json/`;
+const getIpAddressData = async (ip: string): Promise<any> => {
+  const url = `http://ip-api.com/json/${ip}`;
 
   try {
     const response = await axios.get(url);
@@ -12,4 +12,4 @@ const IpAddress = async ({ip}: any) => {
   }
 };
 
-export default IpAddress;
+export default getIpAddressData;

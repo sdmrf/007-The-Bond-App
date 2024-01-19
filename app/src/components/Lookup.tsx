@@ -1,17 +1,16 @@
-import React, {useState} from 'react';
-import {View, TextInput, Text, StyleSheet, Button} from 'react-native';
+import React, { useState } from 'react';
+import { View, TextInput, Text, StyleSheet, Button } from 'react-native';
 
-const Lookup = ({route}: any) => {
+const Lookup = ({ route, setSearch }: any) => {
   // State for input value and search result
-  const [username, setUsername] = useState('');
-  const [searchResult, setSearchResult] = useState('');
+  const [keyword, setKeyword] = useState('');
 
   // Extracting screen from route params
   const screen = route.params.screen;
 
   // Function to handle search
   const handleSearch = () => {
-    setSearchResult(`Search result for: ${username}`);
+    setSearch(keyword);
   };
 
   return (
@@ -20,12 +19,11 @@ const Lookup = ({route}: any) => {
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
-          placeholder="Enter username"
-          onChangeText={setUsername}
+          placeholder="Enter Keyword"
+          onChangeText={setKeyword}
         />
         <Button title="Search" onPress={handleSearch} />
       </View>
-      {searchResult && <Text style={styles.result}>{searchResult}</Text>}
     </View>
   );
 };
