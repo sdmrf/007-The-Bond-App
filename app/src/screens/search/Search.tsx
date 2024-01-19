@@ -1,12 +1,24 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+// Imports
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
 
-const Search = () => {
+// Screen Imports
+import Lookup from '../../components/Lookup';
+
+// Search component
+const Search = ({ route }: any) => {
   return (
-    <View>
-      <Text>Search</Text>
+    <View style={styles.container}>
+      <Lookup route={route} />
     </View>
-  )
-}
+  );
+};
 
-export default Search
+export default Search;
+
+// Styles
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});

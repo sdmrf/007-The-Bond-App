@@ -1,12 +1,12 @@
 // Imports
 import React from 'react';
-import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
+import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
 
 // Components
 import Feature from '../../components/Feature';
 
 // Constants
-import {colors, icons, images} from '../../constants';
+import { colors, icons, images } from '../../constants';
 
 // Features
 const features = [
@@ -18,17 +18,17 @@ const features = [
   {
     icon: icons.webSearch,
     label: 'Web Search',
-    navigation: 'WebSearch',
+    navigation: 'Web',
   },
   {
     icon: icons.telephone,
     label: 'Phone Search',
-    navigation: 'PhoneSearch',
+    navigation: 'Phone',
   },
   {
     icon: icons.ipAddress,
     label: 'IP Address Search',
-    navigation: 'IPAddressSearch',
+    navigation: 'IPAddress',
   },
   {
     icon: icons.platforms,
@@ -36,31 +36,46 @@ const features = [
     navigation: 'Platforms',
   },
 ];
+
+// Function to handle feature press
 const handleFeaturePress = (navigation: any, screen: string) => {
-  navigation.navigate('Search');
+  navigation.navigate('Search', {
+    screen: screen,
+  });
 };
 
-const Homescreen = ({navigation}: any) => {
+// Homescreen component
+const Homescreen = ({ navigation }: any) => {
   return (
     <View style={styles.main}>
+      {/* Header section */}
       <View style={styles.header}>
         <Text style={styles.title}>007 - The Bond</Text>
         <Image source={icons.menu} style={styles.menu} />
       </View>
+
+      {/* Container */}
       <View style={styles.container} />
+
+      {/* Wrapper component */}
       <Wrapper navigation={navigation} />
     </View>
   );
 };
 
-const Wrapper = ({navigation}: any) => {
+// Wrapper component
+const Wrapper = ({ navigation }: any) => {
   return (
     <View style={styles.wrapper}>
       <Text style={styles.featurestxt}>Features</Text>
+
+      {/* Circular image container */}
       <View style={styles.circle}>
         <Image source={images.mainImg} style={styles.mainImg} />
       </View>
+
       <View style={styles.featurescontainer}>
+        {/* Mapping features and rendering Feature component */}
         {features.map((feature, index) => (
           <Feature
             key={index}
@@ -75,8 +90,9 @@ const Wrapper = ({navigation}: any) => {
 };
 
 // Dimensions
-const {width, height} = Dimensions.get('screen');
+const { width, height } = Dimensions.get('screen');
 
+// Styles
 const styles = StyleSheet.create({
   main: {
     flex: 1,
