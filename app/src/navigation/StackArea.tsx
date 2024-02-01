@@ -1,6 +1,6 @@
 // Imports
-import React, { useEffect, useState } from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React, {useEffect, useState} from 'react';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // React Navigation Stack
@@ -11,6 +11,7 @@ import HomeScreen from '../screens/homescreen/Homescreen';
 import GetStarted from '../screens/getStarted/GetStarted';
 import TermsAndConditions from '../screens/termsAndConditions/TermsAndConditions';
 import Search from '../screens/search/Search';
+import UnderProgress from '../screens/underProgress/UnderProgress';
 
 const StackArea = () => {
   const [accepted, setAccepted] = useState<boolean | null>(null);
@@ -61,6 +62,13 @@ const StackArea = () => {
       <Stack.Screen
         name="Search"
         component={Search}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="UnderProgress"
+        component={UnderProgress}
         options={{
           headerShown: false,
         }}

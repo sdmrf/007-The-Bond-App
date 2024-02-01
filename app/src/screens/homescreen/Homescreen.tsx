@@ -1,4 +1,3 @@
-// Imports
 import React from 'react';
 import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
 
@@ -10,42 +9,23 @@ import { colors, icons, images } from '../../constants';
 
 // Features
 const features = [
-  {
-    icon: icons.instagram,
-    label: 'Instagram Search',
-    navigation: 'Instagram',
-  },
-  {
-    icon: icons.webSearch,
-    label: 'Web Search',
-    navigation: 'Web',
-  },
-  {
-    icon: icons.telephone,
-    label: 'Phone Search',
-    navigation: 'Phone',
-  },
-  {
-    icon: icons.ipAddress,
-    label: 'IP Address Search',
-    navigation: 'IPAddress',
-  },
-  {
-    icon: icons.platforms,
-    label: 'Search on Platforms',
-    navigation: 'Platforms',
-  },
+  { icon: icons.instagram, label: 'Instagram Search', navigation: 'Instagram' },
+  { icon: icons.webSearch, label: 'Web Search', navigation: 'Web' },
+  { icon: icons.telephone, label: 'Phone Search', navigation: 'Phone' },
+  { icon: icons.ipAddress, label: 'IP Address Search', navigation: 'IPAddress' },
+  { icon: icons.platforms, label: 'Search on Platforms', navigation: 'Platforms' },
 ];
 
 // Function to handle feature press
-const handleFeaturePress = (navigation: any, screen: string) => {
-  navigation.navigate('Search', {
-    screen: screen,
-  });
+const handleFeaturePress = (navigation, screen) => {
+  const underProgressScreens = ['Instagram', 'Phone'];
+  const targetScreen = underProgressScreens.includes(screen) ? 'UnderProgress' : 'Search';
+
+  navigation.navigate(targetScreen, { screen });
 };
 
 // Homescreen component
-const Homescreen = ({ navigation }: any) => {
+const Homescreen = ({ navigation }) => {
   return (
     <View style={styles.main}>
       {/* Header section */}
@@ -64,7 +44,7 @@ const Homescreen = ({ navigation }: any) => {
 };
 
 // Wrapper component
-const Wrapper = ({ navigation }: any) => {
+const Wrapper = ({ navigation }) => {
   return (
     <View style={styles.wrapper}>
       <Text style={styles.featurestxt}>Features</Text>

@@ -40,10 +40,6 @@ const Search = ({route}: any) => {
     }
   };
 
-  useEffect(() => {
-    // Example: Auto-search when the component mounts (you can modify this as needed)
-    setSearch('initial search term');
-  }, []); // Make sure to add the dependencies if needed
 
   return (
     <View style={styles.container}>
